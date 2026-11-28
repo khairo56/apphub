@@ -1,4 +1,113 @@
-<!doctype html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Khairo AppHub</title>
+
+<style>
+body {
+  font-family: Arial;
+  background: #10101c;
+  color: white;
+  text-align: center;
+  margin: 0;
+}
+
+header {
+  background: #24243e;
+  padding: 25px;
+}
+
+h1 {
+  color: #ff4fa3;
+}
+
+input {
+  padding: 15px;
+  width: 80%;
+  border-radius: 25px;
+  border: none;
+  margin: 20px;
+}
+
+.apps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.app {
+  background: #24243e;
+  padding: 20px 5px;
+  border-radius: 15px;
+  color: white;
+  text-decoration: none;
+}
+
+.app span {
+  font-size: 35px;
+}
+
+footer {
+  padding: 20px;
+  color: #aaa;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>✨ KHAIRO APPHUB ✨</h1>
+<p>All your favourite apps in one place</p>
+</header>
+
+<input type="text" id="search"
+placeholder="Search apps..." onkeyup="searchApps()">
+
+<div class="apps" id="apps">
+
+<a class="app" href="https://facebook.com">
+<span>📘</span><p>Facebook</p></a>
+
+<a class="app" href="https://instagram.com">
+<span>📸</span><p>Instagram</p></a>
+
+<a class="app" href="https://tiktok.com">
+<span>🎵</span><p>TikTok</p></a>
+
+<a class="app" href="https://whatsapp.com">
+<span>💬</span><p>WhatsApp</p></a>
+
+<a class="app" href="https://youtube.com">
+<span>▶️</span><p>YouTube</p></a>
+
+<a class="app" href="https://google.com">
+<span>🔍</span><p>Google</p></a>
+
+</div>
+
+<footer>
+<p>Powered by Khairo ✨</p>
+</footer>
+
+<script>
+function searchApps() {
+  let input = document.getElementById("search").value.toLowerCase();
+  let apps = document.querySelectorAll(".app");
+
+  apps.forEach(app => {
+    app.style.display =
+      app.innerText.toLowerCase().includes(input)
+      ? "" : "none";
+  });
+}
+</script>
+
+</body>
+</html><!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
